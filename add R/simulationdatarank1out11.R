@@ -111,18 +111,18 @@ par(mar = c(5, 6, 4, 2) + 0.1)  # Bottom, left, top, right
 
 # plot(rowproj[,c(xaxis)],rowproj[,c(yaxis)], pch = 20, asp=1, col = "blue", xlim=c(axisminx,axismaxx),
 #      ylim=c(axisminy,axismaxy),# xaxs="i", yaxs="i",
-#      xlab=paste0("Dim", xaxis, ": ",format(round((X.svd$d[xaxis]), 3), nsmall = 3), " (", format(100*round((X.svd$d[xaxis]^2)/sum(X.svd$d^2), 3), nsmall = 1), "%)"), ylab=paste0("Dim", yaxis, ": ", format(round((X.svd$d[yaxis]), 3), nsmall = 3), " (", format(100*round((X.svd$d[yaxis]^2)/sum(X.svd$d^2), 3), nsmall = 1), "%)"), fg = "gray", cex.lab=2.5, cex = 4.5)
+#      xlab=paste0("Dim", xaxis, ": ",format(round((X.svd$d[xaxis]), 3), nsmall = 3), " (", format(100*round((X.svd$d[xaxis]^2)/sum(X.svd$d^2), 3), nsmall = 1), "%)"), ylab=paste0("Dim", yaxis, ": ", format(round((X.svd$d[yaxis]), 3), nsmall = 3), " (", format(100*round((X.svd$d[yaxis]^2)/sum(X.svd$d^2), 3), nsmall = 1), "%)"), fg = "gray", cex.lab=2.5, cex = 2)
 
 plot(rowproj[,c(xaxis)],rowproj[,c(yaxis)], axes=FALSE, pch = 20, asp=1, col = "blue", xlim=c(axisminx,axismaxx),
      ylim=c(axisminy,axismaxy),# xaxs="i", yaxs="i",
-     #xlab=paste0("Dim", xaxis, ": ",format(round((X.svd$d[xaxis]), 3), nsmall = 3), " (", format(100*round((X.svd$d[xaxis]^2)/sum(X.svd$d^2), 3), nsmall = 1), "%)"), ylab = "", fg = "gray", cex.lab=2.5, cex = 4.5)
-     xlab="", ylab = "", fg = "gray", cex.lab=2.5, cex = 4.5)
+     #xlab=paste0("Dim", xaxis, ": ",format(round((X.svd$d[xaxis]), 3), nsmall = 3), " (", format(100*round((X.svd$d[xaxis]^2)/sum(X.svd$d^2), 3), nsmall = 1), "%)"), ylab = "", fg = "gray", cex.lab=2.5, cex = 2)
+     xlab="", ylab = "", fg = "gray", cex.lab=2.5, cex = 2)
 
-points(colproj[,c(xaxis)], colproj[,c(yaxis)], col = "red", pch = 17, cex = 4.5)
+points(colproj[,c(xaxis)], colproj[,c(yaxis)], col = "red", pch = 17, cex = 2)
 
 # abline(v=0, h=0, col="gray")
 tempforlab <- rbind(rowproj[,c(xaxis, yaxis)], colproj[,c(xaxis, yaxis)])
-autoLab(tempforlab[,c(xaxis)], tempforlab[,c(yaxis)], labels = c(rownames(rowproj),rownames(colproj)), col = c(rep("blue", nrow(rowproj)), rep("red", nrow(colproj))), cex.lab=2.5, cex = 4.5)
+autoLab(tempforlab[,c(xaxis)], tempforlab[,c(yaxis)], labels = c(rownames(rowproj),rownames(colproj)), col = c(rep("blue", nrow(rowproj)), rep("red", nrow(colproj))), cex.lab=2.5, cex = 2)
 par(mgp = c(4, 1.8, 0))
 axis(1, at=c(axisminx, -0.5, 0, 0.5, 1, axismaxx),tick = TRUE, pos = -0.2, labels = c(axisminx, -0.5, 0, 0.5, 1, axismaxx), cex.axis = 2.5)
 
